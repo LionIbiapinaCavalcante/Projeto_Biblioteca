@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'usuarios/css/login.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container" >
+        <main>
+            <form action="{% url 'login' %}" method="POST" >{% csrf_token %}
+                <span class="title" >Projeto Biblioteca</span>
+
+                <input class="input" type="email" name="email" placeholder="E-mail">
+                <input class="input" type="password" name="password" placeholder="Password">
+                <br><br>
+                <input class="btn" type="submit" value="Login">
+            </form> 
+        </main>
+    </div>
+</body>
+</html>
